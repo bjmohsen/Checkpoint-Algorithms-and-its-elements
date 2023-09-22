@@ -7,9 +7,12 @@ VAR
    nbrm : INTEGER := 0 ;
    nbrv : INTEGER := 0 ;
 BEGIN
+/*boucle repete teste le caracter indique et calcule le nbr caracter et nbr mot et le vouyelle*/
     REPEAT
         read (chi);
          
+/* boucle if pour elimene lespase au debut de phrase */
+
         if (nbri=0 and chi=" ") then
            read (chi);
          else 
@@ -17,12 +20,13 @@ BEGIN
             ph = ph+ch ;
             nbri = nbri+1 ;
          END_if
-
+/* boucle if else_if else pour calcule le nbr de mot et le vouyella*/
         IF (ch=" " and chi=" ") THEN
             read (chi);
         ELSE_IF (ch=" " and (chi="." or chi <> " ")) THEN
             nbrm = nbrm+1 ;
         ELSE
+ /*utilisation switch plus facile a ce condtion*/       
             SWITCH (variable) DO
                 case a : nbrv=nbrv+1 ; BREAK;
                 case e : nbrv=nbrv+1 ; BREAK;
@@ -32,11 +36,14 @@ BEGIN
             END_SWITCH (chi) DO
         END_IF
 
+/* condtion d'arret de boucle*/
     UNTIL (chi=".")
+    
+    /*resltat affichier*/
 
     write (ph);
     write ("numbr of char"); write (nbri);
-    write ("numbr of voelle"); write (nbrv);
+    write ("numbr of voeylle"); write (nbrv);
     write ("numbr of word"); write (nbri);
 
 END
