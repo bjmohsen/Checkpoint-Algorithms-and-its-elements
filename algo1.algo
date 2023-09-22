@@ -1,0 +1,42 @@
+ALGORITHM test_character
+VAR
+   ph :STRING;
+   ch : CHAR;
+   chi : CHAR;
+   nbri : INTEGER := 0 ;
+   nbrm : INTEGER := 0 ;
+   nbrv : INTEGER := 0 ;
+BEGIN
+    REPEAT
+        read (chi);
+         
+        if (nbri=0 and chi=" ") then
+           read (chi);
+         else 
+            ch = chi ;
+            ph = ph+ch ;
+            nbri = nbri+1 ;
+         END_if
+
+        IF (ch=" " and chi=" ") THEN
+            read (chi);
+        ELSE_IF (ch=" " and (chi="." or chi <> " ")) THEN
+            nbrm = nbrm+1 ;
+        ELSE
+            SWITCH (variable) DO
+                case a : nbrv=nbrv+1 ; BREAK;
+                case e : nbrv=nbrv+1 ; BREAK;
+                case u : nbrv=nbrv+1 ; BREAK;
+                case i : nbrv=nbrv+1 ; BREAK;
+                case o : nbrv=nbrv+1 ; BREAK;
+            END_SWITCH (chi) DO
+        END_IF
+
+    UNTIL (chi=".")
+
+    write (ph);
+    write ("numbr of char"); write (nbri);
+    write ("numbr of voelle"); write (nbrv);
+    write ("numbr of word"); write (nbri);
+
+END
