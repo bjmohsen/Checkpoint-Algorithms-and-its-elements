@@ -27,7 +27,7 @@ BEGIN
             nbrm = nbrm+1 ;
         ELSE
  /*utilisation switch plus facile a ce condtion*/       
-            SWITCH (variable) DO
+            SWITCH (chi) DO
                 case a : nbrv=nbrv+1 ; BREAK;
                 case e : nbrv=nbrv+1 ; BREAK;
                 case u : nbrv=nbrv+1 ; BREAK;
